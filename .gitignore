@@ -1,0 +1,19 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+resources/android/
+resources/ios/
+resources/browser/
+www/lib
+www/css/ionic.app.css
+www/css/ionic.app.min.css
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

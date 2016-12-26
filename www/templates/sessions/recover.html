@@ -1,0 +1,17 @@
+<ion-modal-view class="bg-light">
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">Recuperar contraseña</h1>
+    <button class="button button-light button-clear ion-close-round"
+            ng-click="recoverModal.hide()"></button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon  placeholder-icon"></i>
+        <input type="email" placeholder="Email" ng-model="data.email">
+      </label>
+      <button class="button button-block button-positive button-bordered"
+              ng-click="recover(data)">Recuperar contraseña</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

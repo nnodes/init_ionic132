@@ -1,0 +1,17 @@
+<ion-view view-title="Perfil">
+  <ion-content>
+    <ion-spinner ng-if="!user.$resolved" class="spinner-royal spinner-center"></ion-spinner>
+    <div ng-if="user.$resolved">
+      <div class="list profile card">
+        <div class="item item-avatar">
+          <img ng-src="{{user.avatar ? user.avatar : 'img/logo.png'}}">
+          <h2>{{user.first_name + ' ' + user.last_name}}</h2>
+          <p><b>{{user.email}}</b></p>
+        </div>
+      </div>
+      <div class="padding">
+        <button class="button button-assertive button-block" ng-click="confirmLogout()">Cerrar sesión</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

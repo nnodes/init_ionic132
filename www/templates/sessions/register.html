@@ -1,0 +1,68 @@
+<ion-modal-view class="bg-light">
+  <ion-header-bar class="bar-positive">
+    <button class="button button-light button-clear ion-close-round"
+            ng-click="registerModal.hide()"></button>
+    <h1 class="title">Registro</h1>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <form name="registerForm" novalidate>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Nombre</span>
+          <input name="firstName" type="text" placeholder="Nombre"
+                 ng-model="data.firstName" required>
+          <span class="error" ng-show="registerForm.firstName.$error.required && registerForm.$submitted">
+            Ingrese un nombre
+          </span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Apellido</span>
+          <input name="lastName" type="text" placeholder="Apellido"
+                 ng-model="data.lastName" required>
+          <span class="error" ng-show="registerForm.lastName.$error.required && registerForm.$submitted">
+            Ingrese un apellido
+          </span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Correo electrónico</span>
+          <input name="email" type="email" placeholder="Correo electrónico"
+                 ng-model="data.email" required>
+          <span class="error" ng-show="registerForm.email.$error.required && registerForm.$submitted">
+            Ingrese un correo electrónico
+          </span>
+          <span class="error" ng-show="registerForm.email.$error.email && registerForm.$submitted">
+            Correo electrónico inválido
+          </span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Contraseña</span>
+          <input name="password" type="password" placeholder="Contraseña"
+                 ng-model="data.password" required>
+          <span class="error" ng-show="registerForm.password.$error.required && registerForm.$submitted">
+            Ingrese una contraseña
+          </span>
+          <span class="error" ng-show="registerForm.password.$error.minlength && registerForm.$submitted">
+            La contraseña debe tener al menos 8 caracteres
+          </span>
+        </label>
+        <label class="item item-input item-floating-label">
+          <span class="input-label">Confirmar contraseña</span>
+          <input name="passwordConfirm" type="password" placeholder="Confirmar contraseña"
+                 ng-model="data.passwordConfirm" password-verify="data.password" required>
+          <span class="error" ng-show="registerForm.passwordConfirm.$error.required && registerForm.$submitted">
+            Confirme su contraseña
+          </span>
+          <span class="error" ng-show="registerForm.passwordConfirm.$error.noMatch && registerForm.$submitted">
+            La contraseña no coincide
+          </span>
+        </label>
+        <div class="padding">
+          <button class="button button-block button-calm button-bordered"
+                  ng-click="register(data)">
+            Crear cuenta
+          </button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-modal-view>

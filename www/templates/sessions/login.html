@@ -1,0 +1,48 @@
+<ion-view hide-nav-bar="true" class="bg-royal">
+  <ion-content>
+    <div class="padding">
+      <img style="width:70%;margin:auto;display:block" src="img/logo.png">
+      <form name="loginForm" novalidate>
+        <div class="padding">
+          <button class="button button-block button-positive icon ion-social-facebook"
+                  ng-click="fbLogin()">
+            Iniciar sesión con facebook
+          </button>
+        </div>
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input name="email" type="email" placeholder="Correo electrónico"
+            ng-model="data.email" required>
+          </label>
+          <span class="error" ng-show="loginForm.email.$error.required && loginForm.$submitted">
+            Ingrese su correo electrónico
+          </span>
+          <span class="error" ng-show="loginForm.email.$error.email && loginForm.$submitted">
+            Correo electrónico inválido
+          </span>
+          <label class="item item-input">
+            <input name="password" type="password" placeholder="Contraseña"
+            ng-model="data.password" ng-minlength="8" required>
+          </label>
+          <span class="error" ng-show="loginForm.password.$error.required && loginForm.$submitted">
+            Ingrese su contraseña
+          </span>
+          <span class="error" ng-show="loginForm.password.$error.minlength && loginForm.$submitted">
+            La contraseña debe tener al menos 8 caracteres
+          </span>
+        </div>
+        <div class="padding">
+          <a href="" ng-click="openRecover()">
+            ¿Olvidaste tu contraseña?
+          </a>
+          <button class="button button-block button-calm" ng-click="login(data)">
+            Iniciar sesión
+          </button>
+          <a class="button button-block button-clear" ng-click="openRegister()">
+            Registrarse
+          </a>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
